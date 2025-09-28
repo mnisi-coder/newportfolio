@@ -1,0 +1,23 @@
+<div [ngClass]="isMobile ? 'mobile' : 'desktop' " [ngClass]="isDarkMode ? 'dark-mode' : 'light-mode'" class="h-full w-full">
+    <button (click)="isDarkMode = !isDarkMode">
+        Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+    </button>
+
+    <app-courasal></app-courasal>
+    <app-about-c></app-about-c>
+    <app-why></app-why>
+    <app-project></app-project>
+    <app-skills></app-skills>
+    <app-history></app-history>
+
+</div>
+
+<div [ngClass]="isMobile ? 'desktop' : 'mobile' " [ngClass]="isDarkMode ? 'dark-mode' : 'light-mode'" class="h-full w-full">
+    <button (click)="isDarkMode = !isDarkMode">
+        Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+    </button>
+
+    <app-nomobile></app-nomobile>
+
+
+</div>
