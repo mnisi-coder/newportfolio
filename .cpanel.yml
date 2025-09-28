@@ -1,11 +1,20 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/studezvd/jali.studenterb.co.za/
-    - echo "Deployment working!" > $DEPLOYPATH/test.txt
-    # - /bin/cp -R dist/* $DEPLOYPATH
-    # Copy build output to public_html
-    - echo "=== Copying files to public_html ===" >> $DEPLOYPATH/deploy.log 2>&1
-    - /bin/cp -R dist/* $DEPLOYPATH >> $DEPLOYPATH/deploy.log 2>&1
+    # - export DEPLOYPATH=/home/studezvd/jali.studenterb.co.za/
+    # - echo "Deployment working!" > $DEPLOYPATH/test.txt
+    # # - /bin/cp -R dist/* $DEPLOYPATH
+    # # Copy build output to public_html
+    # - echo "=== Copying files to public_html ===" >> $DEPLOYPATH/deploy.log 2>&1
+    # - /bin/cp -R dist/* $DEPLOYPATH >> $DEPLOYPATH/deploy.log 2>&1
 
-    - echo "=== Deployment finished at $(date) ===" >> $DEPLOYPATH/deploy.log 2>&1
-
+    # - echo "=== Deployment finished at $(date) ===" >> $DEPLOYPATH/deploy.log 2>&1
+    - |
+      export DEPLOYPATH=/home/studezvd/jali.studenterb.co.za/
+      echo "Deployment working!" > $DEPLOYPATH/test.txt
+      echo "Changing directory to 'portfolio'" >> $DEPLOYPATH/deploy.log 2>&1
+      # Make sure the 'portfolio' directory exists
+      mkdir -p "$DEPLOYPATH/portfolio"
+      cd "$DEPLOYPATH/portfolio"
+      echo "Copying build files to 'portfolio'" >> "$DEPLOYPATH/deploy.log" 2>&1
+      /bin/cp -R "$DEPLOYPATH/dist/"* "$DEPLOYPATH/portfolio/" >> "$DEPLOYPATH/deploy.log" 2>&1
+      echo "=== Deployment finished at $(date) ===" >> "$DEPLOYPATH/deploy.log" 2>&1
