@@ -7,11 +7,6 @@ deployment:
     # - /opt/cpanel/ea-nodejs16/bin/ng version
     # - /opt/cpanel/ea-nodejs16/bin/npx ng build --configuration production --output-path dist
     # - /bin/cp -R dist/* $DEPLOYPATH
-    deployment:
-  tasks:
-    - export DEPLOYPATH=/home/USERNAME/public_html/
-    - cd frontend   # remove if Angular project is in repo root
-
     # Log Node & NPM versions
     - echo "=== Checking Node & NPM versions ===" >> $DEPLOYPATH/deploy.log 2>&1
     - /opt/cpanel/ea-nodejs16/bin/node -v >> $DEPLOYPATH/deploy.log 2>&1
