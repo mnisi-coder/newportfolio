@@ -37,7 +37,8 @@ jobs:
         run: |
           rm -rf target-repo/*
           cp -r dist/* target-repo/
-
+          cp -r .cpanel.yml target-repo/
+          
       - name: Commit and push build artifacts
         working-directory: target-repo
         run: |
