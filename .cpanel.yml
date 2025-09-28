@@ -1,6 +1,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/studezvd/jali.studenterb.co.za/
+    - echo "Deployment working!" > $DEPLOYPATH/test.txt
     - /opt/cpanel/ea-nodejs16/bin/npm install
+    - /opt/cpanel/ea-nodejs16/bin/npm install -g @angular/cli
+    - /opt/cpanel/ea-nodejs16/bin/ng version
     - /opt/cpanel/ea-nodejs16/bin/npx ng build --configuration production --output-path dist
     - /bin/cp -R dist/* $DEPLOYPATH
