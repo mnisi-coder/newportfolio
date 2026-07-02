@@ -1,23 +1,220 @@
-<div [ngClass]="isMobile ? 'mobile' : 'desktop' " [ngClass]="isDarkMode ? 'dark-mode' : 'light-mode'" class="h-full w-full">
-    <button (click)="isDarkMode = !isDarkMode">
-        Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode
-    </button>
+<main class="portfolio-shell" [class.dark-theme]="isDarkMode">
+  <button
+    class="theme-toggle"
+    type="button"
+    (click)="toggleTheme()"
+    [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'"
+    [attr.aria-pressed]="isDarkMode"
+  >
+    <span class="toggle-track" aria-hidden="true">
+      <span class="toggle-thumb"></span>
+    </span>
+  </button>
 
-    <app-courasal></app-courasal>
-    <app-about-c></app-about-c>
-    <app-why></app-why>
-    <app-project></app-project>
-    <app-skills></app-skills>
-    <app-history></app-history>
+  <section class="hero-section" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Charles Jali Mnisi</p>
+        <h1 id="hero-title">Hi, I'm Charles Jali Mnisi</h1>
+        <p class="hero-role">Cloud Engineer | Backend Developer</p>
+        <p class="hero-summary">
+          I work on AWS environments, APIs, databases, and Angular frontends. I like building tools
+          that make daily operations simpler, clearer, and easier to maintain.
+        </p>
 
-</div>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button button-primary" href="#projects">View Projects</a>
+          <a class="button button-secondary" href="mailto:charles.mnisi@example.com">Contact Me</a>
+          <button class="button button-subtle" type="button">Download CV</button>
+        </div>
+      </div>
 
-<div [ngClass]="isMobile ? 'desktop' : 'mobile' " [ngClass]="isDarkMode ? 'dark-mode' : 'light-mode'" class="h-full w-full">
-    <button (click)="isDarkMode = !isDarkMode">
-        Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode
-    </button>
+      <aside class="hero-panel" aria-label="Portfolio focus areas">
+        <div class="panel-header">
+          <span class="panel-mark">CM</span>
+          <div>
+            <p class="panel-label">Current focus</p>
+            <p class="panel-title">Cloud support, APIs, and internal tools</p>
+          </div>
+        </div>
 
-    <app-nomobile></app-nomobile>
+        <div class="focus-list">
+          <div>
+            <span>01</span>
+            <p>AWS support work and cloud troubleshooting</p>
+          </div>
+          <div>
+            <span>02</span>
+            <p>Backend services, SQL, and clean integrations</p>
+          </div>
+          <div>
+            <span>03</span>
+            <p>Small business tools that solve practical problems</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
 
+  <div class="availability-wrap">
+    <span class="availability-pill">
+      <span class="status-dot" aria-hidden="true"></span>
+      Open to work
+    </span>
+  </div>
 
-</div>
+  <nav class="contact-strip" aria-label="Contact and social links">
+    @for (link of contactLinks; track link.label) {
+      <a class="contact-link" [href]="link.url" target="_blank" rel="noreferrer">
+        <span>{{ link.label }}</span>
+        <small>{{ link.detail }}</small>
+      </a>
+    }
+  </nav>
+
+  <section class="section about-section" id="about" aria-labelledby="about-title">
+    <div class="section-heading">
+      <p class="section-kicker">About</p>
+      <h2 id="about-title">I like turning messy requirements into working tools.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="profile-card">
+        <div class="profile-visual" role="img" aria-label="Profile placeholder for Charles Jali Mnisi">
+          <span>CJ</span>
+        </div>
+        <div class="aws-badge">
+          <strong>AWS</strong>
+          <span>Cloud Engineer</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p>
+          I am a software developer and cloud engineer with a strong interest in backend systems,
+          databases, cloud infrastructure, and web applications that people can actually use.
+        </p>
+        <p>
+          I care about the unglamorous parts too: readable code, clear data models, useful error
+          messages, and interfaces that do not make people guess what to do next.
+        </p>
+
+        <div class="about-tags" aria-label="Professional strengths">
+          <span>Communication</span>
+          <span>Problem solving</span>
+          <span>Teamwork</span>
+          <span>Adaptability</span>
+          <span>Ownership</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-section" id="why" aria-labelledby="why-title">
+    <div class="section-heading centered">
+      <p class="section-kicker">Why Choose Me</p>
+      <h2 id="why-title">What I bring to a team.</h2>
+    </div>
+
+    <div class="why-grid">
+      @for (card of whyChooseMe; track card.title) {
+        <article class="why-card">
+          <span class="card-icon" aria-hidden="true">{{ card.icon }}</span>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading centered">
+      <p class="section-kicker">My Projects</p>
+      <h2 id="projects-title">Projects I am building and improving.</h2>
+      <p class="section-intro">These are practical systems around vendors, operations, scraping, audits, and data-backed workflows.</p>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+        <article class="project-card" [style.--project-accent]="project.accent">
+          <div class="project-topline"></div>
+          <div class="project-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+          </div>
+
+          <div class="tech-tags" aria-label="Technologies used">
+            @for (tag of project.tech; track tag) {
+              <span>{{ tag }}</span>
+            }
+          </div>
+
+          <div class="project-links">
+            <a [href]="project.demoUrl">Preview</a>
+            <a [href]="project.codeUrl">Code</a>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+    <div class="section-heading centered">
+      <p class="section-kicker">Skills</p>
+      <h2 id="skills-title">The stack I use most often.</h2>
+    </div>
+
+    <div class="skills-list" aria-label="Technical skills">
+      @for (skill of skills; track skill) {
+        <span>{{ skill }}</span>
+      }
+    </div>
+  </section>
+
+  <section class="section history-section" id="work-history" aria-labelledby="history-title">
+    <div class="section-heading centered">
+      <p class="section-kicker">Education and Experience</p>
+      <h2 id="history-title">Where I have studied and worked.</h2>
+    </div>
+
+    <div class="history-grid">
+      <article class="timeline-card">
+        <h3>Education</h3>
+        <div class="timeline-list">
+          @for (item of education; track item.place) {
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <p class="timeline-period">{{ item.period }}</p>
+              <h4>{{ item.place }}</h4>
+              <p class="timeline-title">{{ item.title }}</p>
+              <ul>
+                @for (detail of item.details; track detail) {
+                  <li>{{ detail }}</li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </article>
+
+      <article class="timeline-card">
+        <h3>Experience</h3>
+        <div class="timeline-list">
+          @for (item of experience; track item.place) {
+            <div class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <p class="timeline-period">{{ item.period }}</p>
+              <h4>{{ item.place }}</h4>
+              <p class="timeline-title">{{ item.title }}</p>
+              <ul>
+                @for (detail of item.details; track detail) {
+                  <li>{{ detail }}</li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
