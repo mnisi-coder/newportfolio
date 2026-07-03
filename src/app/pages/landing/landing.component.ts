@@ -18,7 +18,7 @@ type Project = {
   description: string;
   technologies: string[];
   category: string;
-  status: 'Live' | 'In Progress' | 'Planned' | 'Portfolio';
+  status: 'Live' | 'In Progress' | 'Planned' | 'Portfolio' | 'Done';
   previewLink: string;
   codeLink: string;
 };
@@ -54,7 +54,7 @@ export class LandingComponent implements OnInit {
     {
       label: 'Email',
       detail: 'Start a conversation',
-      url: 'mailto:charles.mnisi@example.com'
+      url: 'mailto:j.mnisi.c.jm@gmail.com'
     }
   ];
 
@@ -62,12 +62,12 @@ export class LandingComponent implements OnInit {
     {
       icon: '01',
       title: 'Expertise',
-      description: 'I am comfortable moving between cloud support, backend logic, databases, and the Angular screens that sit on top.'
+      description: 'I am comfortable moving between cloud support, development logic, AI, databases, and Frontend.'
     },
     {
       icon: '02',
       title: 'Problem-Solving Skills',
-      description: 'I slow down enough to understand the real issue, then work toward fixes that are simple to explain and maintain.'
+      description: 'I take time to understand the real problem before building solutions that are simple, reliable, and easy to maintain.'
     },
     {
       icon: '03',
@@ -109,7 +109,7 @@ export class LandingComponent implements OnInit {
       description: 'Audit and data-capture platform for auditors, including evidence uploads, review workflows, findings, and operational reporting.',
       technologies: ['Angular', 'Node.js', 'Express', 'PostgreSQL', 'AWS S3', 'Docker'],
       category: 'Audit',
-      status: 'In Progress',
+      status: 'Live',
       previewLink: '#',
       codeLink: '#'
     },
@@ -163,7 +163,7 @@ export class LandingComponent implements OnInit {
       description: 'Planned automated news scraper that checks South African car news and YouTube updates daily, then categorizes updates by pricing, new cars, reviews, and market news.',
       technologies: ['Node.js', 'Playwright', 'YouTube', 'Cron', 'APIs'],
       category: 'Automation',
-      status: 'Planned',
+      status: 'In Progress',
       previewLink: '#',
       codeLink: '#'
     },
@@ -172,12 +172,12 @@ export class LandingComponent implements OnInit {
       description: 'Scraper project for collecting KFC menu items, prices, categories, and related food data.',
       technologies: ['Node.js', 'JavaScript', 'Web Scraping'],
       category: 'Scraper',
-      status: 'Planned',
+      status: 'Done',
       previewLink: '#',
       codeLink: '#'
     },
     {
-      title: 'Studenterb.co.za',
+      title: 'Studenterb',
       description: 'Online selling platform created for students to buy and sell items.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
       category: 'Marketplace',
@@ -186,7 +186,7 @@ export class LandingComponent implements OnInit {
       codeLink: '#'
     },
     {
-      title: 'Retail.flowvisualpatterns.co.za',
+      title: 'Retail',
       description: 'Data-capture platform for auditors with image uploads, structured records, and reporting workflows.',
       technologies: ['Angular', 'Express', 'Node.js', 'PostgreSQL', 'AWS S3'],
       category: 'Audit',
@@ -195,12 +195,12 @@ export class LandingComponent implements OnInit {
       codeLink: '#'
     },
     {
-      title: 'Crypto.studenterb.co.za',
+      title: 'Crypto',
       description: 'Cryptocurrency viewing app for browsing and checking crypto market information.',
       technologies: ['React', 'JavaScript', 'APIs'],
       category: 'Web App',
       status: 'Live',
-      previewLink: '#',
+      previewLink: 'Crypto.studenterb.co.za',
       codeLink: '#'
     },
     {
@@ -208,16 +208,16 @@ export class LandingComponent implements OnInit {
       description: 'Personal assistant website built to support helpful tools and user interaction features.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
       category: 'Assistant',
-      status: 'In Progress',
+      status: 'Live',
       previewLink: '#',
-      codeLink: '#'
+      codeLink: 'koneseti.com'
     },
     {
       title: 'Online Auction',
       description: 'Auction platform concept for listing items, bidding, and managing auction workflows.',
       technologies: ['Angular', 'Node.js', 'PostgreSQL'],
       category: 'Concept',
-      status: 'Planned',
+      status: 'Done',
       previewLink: '#',
       codeLink: '#'
     },
@@ -226,7 +226,7 @@ export class LandingComponent implements OnInit {
       description: 'Insurance-related application concept focused on managing insurance products, users, and service workflows.',
       technologies: ['Angular', 'Node.js', 'PostgreSQL'],
       category: 'Concept',
-      status: 'Planned',
+      status: 'Done',
       previewLink: '#',
       codeLink: '#'
     },
@@ -235,7 +235,7 @@ export class LandingComponent implements OnInit {
       description: 'Tool for encrypting and decrypting text using a frontend interface and backend API.',
       technologies: ['Angular', 'React', 'PHP', 'API'],
       category: 'Tool',
-      status: 'In Progress',
+      status: 'Live',
       previewLink: '#',
       codeLink: '#'
     },
@@ -287,17 +287,21 @@ export class LandingComponent implements OnInit {
     'TypeScript',
     'Angular',
     'React',
-    'Node.js',
+    'Node Js',
     'Python',
     'Django',
     'Java',
-    'SQL',
+    'Oracle',
     'PostgreSQL',
     'MySQL',
     'MongoDB',
     'AWS',
     'Docker',
-    'Git'
+    'Git',
+    'Terraform',
+    'AWS SDK',
+    'AWS EKS',
+    'Nest JS'
   ];
 
   readonly experience: TimelineItem[] = [
@@ -308,10 +312,10 @@ export class LandingComponent implements OnInit {
       details: ['Cloud support and engineering work across customer environments.', 'Troubleshooting, documentation, and scalable service thinking.']
     },
     {
-      title: 'Junior Software Developer',
+      title: 'Junior Software Developer/Team Leader',
       place: 'Shaper / Digital Academy',
       period: '2021 - 2022',
-      details: ['']
+      details: ["Work with development teams and product managers to ideate software solutions, Design client-side and server-side architecture, Build the front-end of applications through appealing visual  design using Angular, Develop and manage well-functioning databases in MongoDB and applications, Write effective API susing NestJs, Test software to ensure responsiveness and efficiency. Troubleshoot, debug and upgrade software. Create security and data protection settings, Build features and applications with a mobile responsive design"]
     },
     
     {
