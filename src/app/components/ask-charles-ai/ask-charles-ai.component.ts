@@ -38,22 +38,22 @@ type AssistantKnowledge = {
 export class AskCharlesAiComponent {
   isOpen = false;
   question = '';
-  response = 'Hi, I am Noma, short for Nomathemba AI. Ask me about Charles, his projects, skills, live apps, or what he enjoys building.';
+  response = 'Hi, I am Noma, short for Nomathemba AI. Ask me about Jali, his projects, skills, live apps, or what he enjoys building.';
 
   readonly suggestedQuestions = [
-    'What projects has Charles built?',
+    'What projects has Jali built?',
     'Tell me about Vendor Lami',
-    'What does Charles enjoy building?',
-    'What makes Charles different?',
-    'Where did Charles study?',
+    'What does Jali enjoy building?',
+    'What makes Jali different?',
+    'Where did Jali study?',
   ];
 
   readonly knowledge: AssistantKnowledge = {
     about: 'Charles Jali Mnisi is a Cloud Engineer and Backend Developer with experience in AWS, APIs, databases, Angular, Node.js, PostgreSQL, and practical business systems.',
-    school: 'Charles started his school journey at Sinqobile Primary School in Soshanguve, continued through high school, and later studied Computer Science at Tshwane University of Technology.',
-    careerFocus: 'Charles is focused on Cloud Engineering, Database Administrator, Software Developer, and Data-focused roles.',
-    hobbies: 'Charles enjoys building side projects, learning new technologies, solving practical business problems, experimenting with AI tools, and creating useful platforms for real-world users.',
-    personalInterests: 'Outside of work and coding, Charles enjoys exploring technology ideas, improving his projects, researching business opportunities, and building things that can solve real problems in communities.',
+    school: 'Jali started his school journey at Sinqobile Primary School in Soshanguve, continued through high school, and later studied Computer Science at Tshwane University of Technology.',
+    careerFocus: 'Jali is focused on Cloud Engineering, Database Administrator, Software Developer, and Data-focused roles.',
+    hobbies: 'Jali enjoys building side projects, learning new technologies, solving practical business problems, experimenting with AI tools, and creating useful platforms for real-world users.',
+    personalInterests: 'Outside of work and coding, Jali enjoys exploring technology ideas, improving his projects, researching business opportunities, and building things that can solve real problems in communities.',
     values: [
       'Building useful systems, not just beautiful screens',
       'Keeping solutions simple, secure, and easy to understand',
@@ -82,13 +82,13 @@ export class AskCharlesAiComponent {
       'Career journey'
     ],
     funFacts: [
-      'Charles enjoys turning ideas into real working systems.',
+      'Jali enjoys turning ideas into real working systems.',
       'He likes building projects that solve practical problems for businesses.',
       'He is interested in AI tools and how they can improve everyday workflows.',
       'He enjoys working with cloud, databases, APIs, and dashboards.',
       'He likes creating platforms that can support local communities and small businesses.'
     ],
-    contact: 'Visitors can reach Charles through LinkedIn, GitHub, or the email link on this portfolio. Private personal details are not shared here.',
+    contact: 'Visitors can reach Jali through LinkedIn, GitHub, or the email link on this portfolio. Private personal details are not shared here.',
     socialMedia: [
       {
         platform: 'LinkedIn',
@@ -104,13 +104,13 @@ export class AskCharlesAiComponent {
       },
       {
         platform: 'Email',
-        handle: 'Email Charles',
+        handle: 'Email Jali',
         url: 'mailto:charles.mnisi@example.com',
         description: 'Professional contact placeholder.'
       },
       {
         platform: 'Portfolio',
-        handle: 'Charles Portfolio',
+        handle: 'Jali Portfolio',
         url: '#',
         description: 'Personal portfolio with projects, skills, experience, and AI assistant.'
       }
@@ -161,7 +161,7 @@ export class AskCharlesAiComponent {
       },
       {
         title: 'Portfolio Website',
-        description: 'this Angular portfolio showing Charles’s profile, projects, skills, education, and experience',
+        description: 'this Angular portfolio showing Jali’s profile, projects, skills, education, and experience',
         technologies: ['Angular', 'TypeScript', 'CSS'],
         status: 'portfolio'
       }
@@ -205,7 +205,7 @@ export class AskCharlesAiComponent {
       normalizedQuestion.includes('github') ||
       normalizedQuestion.includes('email')
     ) {
-      return `You can find Charles here: ${this.formatSocialMedia()}`;
+      return `You can find Jali here: ${this.formatSocialMedia()}`;
     }
 
     if (normalizedQuestion.includes('contact')) {
@@ -231,7 +231,7 @@ export class AskCharlesAiComponent {
     }
 
     if (normalizedQuestion.includes('value')) {
-      return `Charles values ${this.formatList(this.knowledge.values)}.`;
+      return `Jali values ${this.formatList(this.knowledge.values)}.`;
     }
 
     if (
@@ -241,27 +241,27 @@ export class AskCharlesAiComponent {
       normalizedQuestion.includes('working on') ||
       normalizedQuestion.includes('current work')
     ) {
-      return `Charles is currently building ${this.formatList(this.knowledge.currentlyBuilding)}.`;
+      return `Jali is currently building ${this.formatList(this.knowledge.currentlyBuilding)}.`;
     }
 
     if (normalizedQuestion.includes('ask') || normalizedQuestion.includes('talk about')) {
-      return `You can ask Charles about ${this.formatList(this.knowledge.askMeAbout)}.`;
+      return `You can ask Jali about ${this.formatList(this.knowledge.askMeAbout)}.`;
     }
 
     if (normalizedQuestion.includes('vendor lami')) {
       const vendorLami = this.knowledge.projects.find((project) => project.title === 'Vendor Lami');
       return vendorLami
         ? `Vendor Lami is ${vendorLami.description}. It uses ${vendorLami.technologies.join(', ')} and is currently ${vendorLami.status}.`
-        : 'Vendor Lami is a township business discovery and advertising platform Charles is building.';
+        : 'Vendor Lami is a township business discovery and advertising platform Jali is building.';
     }
 
     if (normalizedQuestion.includes('project')) {
       const featuredProjects = this.knowledge.projects.map((project) => project.title).join(', ');
-      return `Charles has built and planned projects across business platforms, carwash systems, scrapers, audit tools, and portfolio work. Examples include ${featuredProjects}.`;
+      return `Jali has built and planned projects across business platforms, carwash systems, scrapers, audit tools, and portfolio work. Examples include ${featuredProjects}.`;
     }
 
     if (normalizedQuestion.includes('skill') || normalizedQuestion.includes('technolog')) {
-      return `Charles works with ${this.knowledge.skills.join(', ')}. His strongest focus areas are Angular, Node.js, PostgreSQL, AWS, APIs, and practical backend systems.`;
+      return `Jali works with ${this.knowledge.skills.join(', ')}. His strongest focus areas are Angular, Node.js, PostgreSQL, AWS, APIs, and practical backend systems.`;
     }
 
     if (normalizedQuestion.includes('fun') || normalizedQuestion.includes('hobby') || normalizedQuestion.includes('enjoy')) {
@@ -277,10 +277,10 @@ export class AskCharlesAiComponent {
     }
 
     if (normalizedQuestion.includes('different')) {
-      return 'Charles combines cloud support experience, backend thinking, practical business problem-solving, and a habit of building real projects instead of only learning theory.';
+      return 'Jali combines cloud support experience, backend thinking, practical business problem-solving, and a habit of building real projects instead of only learning theory.';
     }
 
-    return 'I can answer questions about Charles’s projects, skills, background, live apps, and what he enjoys building.';
+    return 'I can answer questions about Jali’s projects, skills, background, live apps, and what he enjoys building.';
   }
 
   private formatSocialMedia(): string {
