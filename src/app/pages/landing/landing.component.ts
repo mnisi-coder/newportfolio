@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AskCharlesAiComponent } from '../../components/ask-charles-ai/ask-charles-ai.component';
 
 type Link = {
   label: string;
@@ -32,7 +33,7 @@ type TimelineItem = {
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [],
+  imports: [AskCharlesAiComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
