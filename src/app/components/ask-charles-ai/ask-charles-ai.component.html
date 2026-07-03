@@ -1,12 +1,12 @@
-<aside class="assistant-widget" [class.assistant-open]="isOpen" aria-label="Ask Charles AI assistant">
+<aside class="assistant-widget" [class.assistant-open]="isOpen" aria-label="Nomathemba AI assistant">
   @if (isOpen) {
     <div class="assistant-panel" role="dialog" aria-labelledby="assistant-title">
       <div class="assistant-header">
         <div>
           <p class="assistant-kicker">Local assistant</p>
-          <h2 id="assistant-title">Ask Charles AI</h2>
+          <h2 id="assistant-title">Nomathemba AI</h2>
         </div>
-        <button type="button" class="assistant-close" (click)="toggle()" aria-label="Close Ask Charles AI">
+        <button type="button" class="assistant-close" (click)="toggle()" aria-label="Close Nomathemba AI">
           Close
         </button>
       </div>
@@ -16,7 +16,7 @@
       </p>
 
       <div class="assistant-response" aria-live="polite">
-        <span class="assistant-avatar" aria-hidden="true">AI</span>
+        <span class="assistant-avatar" aria-hidden="true">NT</span>
         <p>{{ response }}</p>
       </div>
 
@@ -38,7 +38,7 @@
             rows="2"
             placeholder="Ask about Charles, projects, skills, or live apps"
           ></textarea>
-          <button type="submit" [disabled]="!question.trim()" aria-label="Send question to Ask Charles AI">
+          <button type="submit" [disabled]="!question.trim()" aria-label="Send question to Nomathemba AI">
             Send
           </button>
         </div>
@@ -51,8 +51,8 @@
     class="assistant-launcher"
     (click)="toggle()"
     [attr.aria-expanded]="isOpen"
-    aria-label="Open Ask Charles AI"
+    aria-label="Open Nomathemba AI"
   >
-    Ask Charles AI
+    Ask Noma AI
   </button>
 </aside>

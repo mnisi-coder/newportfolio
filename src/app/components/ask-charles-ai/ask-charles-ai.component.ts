@@ -38,7 +38,7 @@ type AssistantKnowledge = {
 export class AskCharlesAiComponent {
   isOpen = false;
   question = '';
-  response = 'Hi, I am Charles AI. Ask me about Charles, his projects, skills, live apps, or what he enjoys building.';
+  response = 'Hi, I am NomaT, short for Nomathemba AI. Ask me about Charles, his projects, skills, live apps, or what he enjoys building.';
 
   readonly suggestedQuestions = [
     'What projects has Charles built?',
