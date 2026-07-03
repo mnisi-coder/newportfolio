@@ -304,15 +304,16 @@ export class LandingComponent implements OnInit {
     {
       title: 'Cloud Engineer',
       place: 'Amazon Web Services',
-      period: '2023 - Present',
+      period: '2022 - Present',
       details: ['Cloud support and engineering work across customer environments.', 'Troubleshooting, documentation, and scalable service thinking.']
     },
     {
-      title: 'Cloud Associate',
+      title: 'Junior Software Developer',
       place: 'Shaper / Digital Academy',
-      period: '2022 - 2023',
-      details: ['Cloud foundations, infrastructure concepts, and hands-on technical training.', 'Built strong habits around learning, teamwork, and delivery.']
+      period: '2021 - 2022',
+      details: ['']
     },
+    
     {
       title: 'Software Developer Intern',
       place: 'ICEP',
@@ -322,17 +323,18 @@ export class LandingComponent implements OnInit {
   ];
 
   readonly education: TimelineItem[] = [
+
     {
-      title: 'Computer Science',
+      title: 'Advance Diploma in Computer Science',
       place: 'Tshwane University of Technology',
-      period: 'Tertiary Education',
+      period: '2026-2027',
       details: ['Core software engineering, databases, programming, and systems fundamentals.']
     },
     {
-      title: 'Matric',
-      place: 'High School XYZ',
-      period: 'Secondary Education',
-      details: ['Completed secondary education with a technical and problem-solving foundation.']
+      title: 'National Diploma in Software Develpment',
+      place: 'Tshwane University of Technology',
+      period: '2017-2021',
+      details: ['Core software engineering, databases, programming, and systems fundamentals.']
     }
   ];
 
